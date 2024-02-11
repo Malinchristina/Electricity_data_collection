@@ -97,10 +97,33 @@ def get_transfer_fee():
             print("Invalid input, please enter a number with one decimal place\n")
 
 
-#def update_costs_sheet():
+def update_costs_sheet():
     """
-    Update the costs sheet with the data and add a new row.
+    Update the costs sheet with the data from the functions get_monthly_fee
+    get_electricity_fee, get_subscription_fee and get_transfer_fee
+    and add a new row.
     """
+    print("Uppdating costs worksheet...\n")
+    cost_sheet = GSPREAD_CLIENT.open("electricity-stats").sheet1
+
+
+    monthly_fee = get_monthly_fee()
+    electricity_fee = get_electricity_fee()
+    subscription_fee = get_subscription_fee()
+    transfer_fee = get_transfer_fee()
+
+    # Append new row to cost sheet
+    new_row = [monthly_fee, electricity_fee, subscription_fee, transfer_fee]
+    cost_sheet.append(new_row)
+
+    print("Costs sheet updated with the following data:")
+    print("Monthly fee:", monthly_fee)
+    print("Electricity fee:", electricity_fee)
+    print("Subscription fee:", subscription_fee)
+    print("Transfer fee:", transfer_fee)
+    print("New row added to the costs sheet.")
+
+
  #   print("updating sales worksheet")
     
 
@@ -110,4 +133,4 @@ monthly_fee = get_monthly_fee()
 electricity_fee = get_electricity_fee()
 subscription_fee = get_subscription_fee()
 transfer_fee = get_transfer_fee()
-#update_costs_sheet()
+update_costs = update_costs_sheet()
