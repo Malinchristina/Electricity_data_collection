@@ -52,7 +52,24 @@ def get_electricity_fee():
         except ValueError:
             print("Invalid input, please enter a number with one decimal place\n")
 
-     
+
+def get_subscription_fee():
+    """
+    Ask user to enter subscription fee data
+    """
+    print("Please enter subscription fee data from electricity company.")
+    print("Data should be a three digit number. Example 357.\n")
+
+    # Check so exactly 3 digit number is entered.
+    while True:
+        data_str = input("Enter your data here:")
+        if data_str.isdigit() and len(data_str) == 3:
+            print("Data is valid.")
+            return int(data_str)
+        else:
+            print("Invalid input, please enter a 3 digit number.\n")
+
 
 monthly_fee = get_monthly_fee()
 electricity_fee = get_electricity_fee()
+subscription_fee = get_subscription_fee()
