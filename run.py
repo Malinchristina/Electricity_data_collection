@@ -19,7 +19,7 @@ def get_monthly_fee():
     print("Please enter monthly fee data from electricity company.")
     print ("Data should be a two digit number. Example 20.\n")
 
-    # Raise value error if other than 2 digits are entered.
+    # Check so exactly 2 digit number is entered.
     while True:
         data_str = input("Enter your data here:")
         if data_str.isdigit() and len(data_str) == 2:
