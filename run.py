@@ -30,5 +30,6 @@ def get_monthly_fee():
         
 # def validate_monthly_fee(value):
   #  print(value)
+# testing
 
 get_monthly_fee()
