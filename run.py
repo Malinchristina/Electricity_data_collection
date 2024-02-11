@@ -14,7 +14,8 @@ SHEET = GSPREAD_CLIENT.open("electricity-stats")
 
 def get_monthly_fee():
     """
-    Ask user to enter monthly fee data
+    Ask user to enter monthly fee data collected from the electricity company.
+    Run a while loop to get the correct data, 2 digit number.
     """
     print("Please enter monthly fee data from electricity company.")
     print("Data should be a two digit number. Example 20.\n")
@@ -32,7 +33,8 @@ def get_monthly_fee():
       
 def get_electricity_fee():
     """
-    Ask user to enter electricity fee data
+    Ask user to enter electricity fee data collected from the electricity company.
+    Run a while loop to get the correct data, number with 1 decimal place.
     """
     print("Please enter electricity fee data from electricity company.")
     print ("Data should be a number with 1 decimal. Example 1.5.\n")
@@ -55,7 +57,8 @@ def get_electricity_fee():
 
 def get_subscription_fee():
     """
-    Ask user to enter subscription fee data
+    Ask user to enter subscription fee data collected from the electricity company.
+    Run a while loop to get the correct data, 3 digit number.
     """
     print("Please enter subscription fee data from electricity company.")
     print("Data should be a three digit number. Example 357.\n")
