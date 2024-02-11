@@ -73,6 +73,41 @@ def get_subscription_fee():
             print("Invalid input, please enter a 3 digit number.\n")
 
 
+def get_transfer_fee():
+    """
+    Ask user to enter transfer fee data collected from the electricity company.
+    Run a while loop to get the correct data, number with 1 decimal place.
+    """
+    print("Please enter transfer fee data from electricity company.")
+    print ("Data should be a number with 1 decimal. Example 1.9.\n")
+
+    # Check if float number with 1 decimal is entered.
+    while True:
+        data_str = input("Enter your data here:")
+        try:
+            data = float(data_str)
+            if data.is_integer():
+                print("Invalid input, please enter a number with one decimal place\n")
+            elif round(data, 1) == data: #check if number has one decimal
+                print("Data is valid.")
+                return data 
+            else:
+                print("Invalid input, please enter a number with one decimal place\n")
+        except ValueError:
+            print("Invalid input, please enter a number with one decimal place\n")
+
+
+#def update_costs_sheet():
+    """
+    Update the costs sheet with the data and add a new row.
+    """
+ #   print("updating sales worksheet")
+    
+
+
+
 monthly_fee = get_monthly_fee()
 electricity_fee = get_electricity_fee()
 subscription_fee = get_subscription_fee()
+transfer_fee = get_transfer_fee()
+#update_costs_sheet()
