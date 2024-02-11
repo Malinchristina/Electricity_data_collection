@@ -23,6 +23,7 @@ def get_monthly_fee():
     while True:
         data_str = input("Enter your data here:")
         if data_str.isdigit() and len(data_str) == 2:
+            print("Data is valid.")
             return int(data_str)
         else:
             print("Invalid input, please enter a 2 digit number.\n")
@@ -44,6 +45,7 @@ def get_electricity_fee():
             if data.is_integer():
                 print("Invalid input, please enter a number with one decimal place\n")
             elif round(data, 1) == data: #check if number has one decimal
+                print("Data is valid.")
                 return data 
             else:
                 print("Invalid input, please enter a number with one decimal place\n")
