@@ -24,7 +24,7 @@ def get_monthly_fee():
     while True:
         data_str = input("Enter your data here:")
         if data_str.isdigit() and len(data_str) == 2:
-            print("Data is valid.")
+            print("Data is valid.\n")
             return int(data_str)
         else:
             print("Invalid input, please enter a 2 digit number.\n")
@@ -47,7 +47,7 @@ def get_electricity_fee():
             if data.is_integer():
                 print("Invalid input, please enter a number with one decimal place\n")
             elif round(data, 1) == data: #check if number has one decimal
-                print("Data is valid.")
+                print("Data is valid.\n")
                 return data 
             else:
                 print("Invalid input, please enter a number with one decimal place\n")
@@ -67,7 +67,7 @@ def get_subscription_fee():
     while True:
         data_str = input("Enter your data here:")
         if data_str.isdigit() and len(data_str) == 3:
-            print("Data is valid.")
+            print("Data is valid.\n")
             return int(data_str)
         else:
             print("Invalid input, please enter a 3 digit number.\n")
@@ -89,7 +89,7 @@ def get_transfer_fee():
             if data.is_integer():
                 print("Invalid input, please enter a number with one decimal place\n")
             elif round(data, 1) == data: #check if number has one decimal
-                print("Data is valid.")
+                print("Data is valid.\n")
                 return data 
             else:
                 print("Invalid input, please enter a number with one decimal place\n")
@@ -130,4 +130,5 @@ electricity_fee = get_electricity_fee()
 subscription_fee = get_subscription_fee()
 transfer_fee = get_transfer_fee()
 
+# Call the update_costs_sheet function to update the worksheet
 update_costs_sheet()
