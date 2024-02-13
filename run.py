@@ -11,6 +11,7 @@ CREDS = Credentials.from_service_account_file("creds.json")
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("electricity-stats")
+print(SHEET.worksheets())
 
 def get_monthly_fee():
     """
@@ -150,8 +151,8 @@ def update_costs_sheet():
     transfer_fee = get_transfer_fee()
 
     # Append new row to cost sheet
-    new_row = [monthly_fee, electricity_fee, subscription_fee, transfer_fee]
-    costs_sheet.append_row(new_row)
+    new_row_costs = [monthly_fee, electricity_fee, subscription_fee, transfer_fee]
+    costs_sheet.append_row(new_row_costs)
 
     print("Costs sheet updated with the following data:")
     print("Monthly fee:", monthly_fee)
@@ -159,6 +160,28 @@ def update_costs_sheet():
     print("Subscription fee:", subscription_fee)
     print("Transfer fee:", transfer_fee)
 
+
+def update_consumption_sheet():
+    """
+    Update the consumption sheet with the data from the functions
+    get_total_consumption and get_landlord_consumption
+    and add a new row.
+    """
+    print("Uppdating consumption worksheet...\n")
+    consumption_sheet = SHEET.worksheet("consumption")
+    
+    # Collect user input for each function 
+    total_consumption = get_total_consumption()
+    landlord_consumption = get_landlord_consumption()
+
+    # Append new row to consumption sheet
+    new_row_consumption = [total_consumption, landlord_consumption]
+    new_row_consumption.append_row(new_row_consumption)
+
+    print("Costs sheet updated with the following data:")
+    print("Consumption total:", total_consumption)
+    print("Consumption landlord:", landlord_consumption)
+    
     
 # Call the functions to collect user input
 monthly_fee = get_monthly_fee()
