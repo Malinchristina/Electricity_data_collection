@@ -104,9 +104,10 @@ def update_costs_sheet():
     and add a new row.
     """
     print("Uppdating costs worksheet...\n")
-    cost_sheet = GSPREAD_CLIENT.open("electricity-stats").sheet1
-
-
+    costs_sheet = SHEET.worksheet("costs")
+    
+    
+    # Collect user input for each function 
     monthly_fee = get_monthly_fee()
     electricity_fee = get_electricity_fee()
     subscription_fee = get_subscription_fee()
@@ -114,23 +115,19 @@ def update_costs_sheet():
 
     # Append new row to cost sheet
     new_row = [monthly_fee, electricity_fee, subscription_fee, transfer_fee]
-    cost_sheet.append(new_row)
+    costs_sheet.append_row(new_row)
 
     print("Costs sheet updated with the following data:")
     print("Monthly fee:", monthly_fee)
     print("Electricity fee:", electricity_fee)
     print("Subscription fee:", subscription_fee)
     print("Transfer fee:", transfer_fee)
-    print("New row added to the costs sheet.")
-
-
- #   print("updating sales worksheet")
     
 
-
-
+# Call the functions to collect user input
 monthly_fee = get_monthly_fee()
 electricity_fee = get_electricity_fee()
 subscription_fee = get_subscription_fee()
 transfer_fee = get_transfer_fee()
-update_costs = update_costs_sheet()
+
+update_costs_sheet()
