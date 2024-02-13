@@ -176,7 +176,7 @@ def update_consumption_sheet():
 
     # Append new row to consumption sheet
     new_row_consumption = [total_consumption, landlord_consumption]
-    new_row_consumption.append_row(new_row_consumption)
+    consumption_sheet.append_row(new_row_consumption)
 
     print("Costs sheet updated with the following data:")
     print("Consumption total:", total_consumption)
@@ -193,4 +193,6 @@ landlord_consumption = get_landlord_consumption()
 
 # Call the update_costs_sheet function to update the worksheet
 update_costs_sheet()
+
+update_consumption_sheet()
 
