@@ -97,6 +97,24 @@ def get_transfer_fee():
             print("Invalid input, please enter a number with one decimal place\n")
 
 
+def get_total_consumption():
+    """
+    Ask user to enter total consumption from meeter.
+    Run a while loop to get the correct data, 3 digit number.
+    """
+    print("Please enter total consumption from meeter.")
+    print("Data should be a three digit number between 500 to 999.\n")
+
+    # Check so exactly 3 digit number between 500 to 999 is entered.
+    while True:
+        data_str = input("Enter your data here, a number between 500 to 999:")
+        if data_str.isdigit() and 500 <= int(data_str) <= 999:
+            print("Data is valid.\n")
+            return int(data_str)
+        else:
+            print("Invalid input, please enter a number between 500 to 999.\n")
+
+
 def update_costs_sheet():
     """
     Update the costs sheet with the data from the functions get_monthly_fee
@@ -122,13 +140,15 @@ def update_costs_sheet():
     print("Electricity fee:", electricity_fee)
     print("Subscription fee:", subscription_fee)
     print("Transfer fee:", transfer_fee)
-    
 
+    
 # Call the functions to collect user input
 monthly_fee = get_monthly_fee()
 electricity_fee = get_electricity_fee()
 subscription_fee = get_subscription_fee()
 transfer_fee = get_transfer_fee()
+total_consumption = get_total_consumption()
 
 # Call the update_costs_sheet function to update the worksheet
 update_costs_sheet()
+
