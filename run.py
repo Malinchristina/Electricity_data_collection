@@ -115,6 +115,24 @@ def get_total_consumption():
             print("Invalid input, please enter a number between 500 to 999.\n")
 
 
+def get_landlord_consumption():
+    """
+    Ask user to enter total consumption from meeter.
+    Run a while loop to get the correct data, number 70 to 120.
+    """
+    print("Please enter total consumption from meeter.")
+    print("Data should be a three digit number between 70 to 120.\n")
+
+    # Check so exactly 3 digit number between 500 to 999 is entered.
+    while True:
+        data_str = input("Enter your data here, a number between 70 to 120:")
+        if data_str.isdigit() and 70 <= int(data_str) <= 120:
+            print("Data is valid.\n")
+            return int(data_str)
+        else:
+            print("Invalid input, please enter a number between 70 to 120.\n")
+
+
 def update_costs_sheet():
     """
     Update the costs sheet with the data from the functions get_monthly_fee
@@ -148,6 +166,7 @@ electricity_fee = get_electricity_fee()
 subscription_fee = get_subscription_fee()
 transfer_fee = get_transfer_fee()
 total_consumption = get_total_consumption()
+landlord_consumption = get_landlord_consumption()
 
 # Call the update_costs_sheet function to update the worksheet
 update_costs_sheet()
