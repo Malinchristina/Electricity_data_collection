@@ -1,6 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
-from pprint import pprint
+
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -24,7 +24,7 @@ def get_monthly_fee():
 
     # Check so exactly 2 digit number is entered.
     while True:
-        data_str = input("Enter your data here:")
+        data_str = input("Enter your data here:\n")
         if data_str.isdigit() and len(data_str) == 2:
             print("Data is valid.\n")
             return int(data_str)
@@ -43,7 +43,7 @@ def get_electricity_fee():
 
     # Check if float number with 1 decimal is entered.
     while True:
-        data_str = input("Enter your data here:")
+        data_str = input("Enter your data here:\n")
         try:
             data = float(data_str)
             if data.is_integer():
@@ -67,7 +67,7 @@ def get_subscription_fee():
 
     # Check so exactly 3 digit number is entered.
     while True:
-        data_str = input("Enter your data here:")
+        data_str = input("Enter your data here:\n")
         if data_str.isdigit() and len(data_str) == 3:
             print("Data is valid.\n")
             return int(data_str)
@@ -85,7 +85,7 @@ def get_transfer_fee():
 
     # Check if float number with 1 decimal is entered.
     while True:
-        data_str = input("Enter your data here:")
+        data_str = input("Enter your data here:\n")
         try:
             data = float(data_str)
             if data.is_integer():
@@ -109,7 +109,7 @@ def get_total_consumption():
 
     # Check so exactly 3 digit number between 500 to 999 is entered.
     while True:
-        data_str = input("Enter your data here, a number between 500 to 999:")
+        data_str = input("Enter your data here, a number between 500 to 999:\n")
         if data_str.isdigit() and 500 <= int(data_str) <= 999:
             print("Data is valid.\n")
             return int(data_str)
@@ -127,7 +127,7 @@ def get_landlord_consumption():
 
     # Check so exactly 3 digit number between 500 to 999 is entered.
     while True:
-        data_str = input("Enter your data here, a number between 70 to 120:")
+        data_str = input("Enter your data here, a number between 70 to 120:\n")
         if data_str.isdigit() and 70 <= int(data_str) <= 120:
             print("Data is valid.\n")
             return int(data_str)
