@@ -11,7 +11,7 @@ CREDS = Credentials.from_service_account_file("creds.json")
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("electricity-stats")
-print(SHEET.worksheets())
+
 
 def get_monthly_fee():
     """
@@ -134,7 +134,7 @@ def get_landlord_consumption():
             print("Invalid input, please enter a number between 70 to 120.\n")
 
 
-def update_costs_sheet():
+def update_costs_sheet(monthly_fee, electricity_fee, subscription_fee, transfer_fee):
     """
     Update the costs sheet with the data from the functions get_monthly_fee
     get_electricity_fee, get_subscription_fee and get_transfer_fee
@@ -142,13 +142,6 @@ def update_costs_sheet():
     """
     print("Uppdating costs worksheet...\n")
     costs_sheet = SHEET.worksheet("costs")
-    
-    
-    # Collect user input for each function 
-    monthly_fee = get_monthly_fee()
-    electricity_fee = get_electricity_fee()
-    subscription_fee = get_subscription_fee()
-    transfer_fee = get_transfer_fee()
 
     # Append new row to cost sheet
     new_row_costs = [monthly_fee, electricity_fee, subscription_fee, transfer_fee]
@@ -161,7 +154,7 @@ def update_costs_sheet():
     print("Transfer fee:", transfer_fee)
 
 
-def update_consumption_sheet():
+def update_consumption_sheet(total_consumption, landlord_consumption):
     """
     Update the consumption sheet with the data from the functions
     get_total_consumption and get_landlord_consumption
@@ -169,10 +162,6 @@ def update_consumption_sheet():
     """
     print("Uppdating consumption worksheet...\n")
     consumption_sheet = SHEET.worksheet("consumption")
-    
-    # Collect user input for each function 
-    total_consumption = get_total_consumption()
-    landlord_consumption = get_landlord_consumption()
 
     # Append new row to consumption sheet
     new_row_consumption = [total_consumption, landlord_consumption]
@@ -192,7 +181,8 @@ total_consumption = get_total_consumption()
 landlord_consumption = get_landlord_consumption()
 
 # Call the update_costs_sheet function to update the worksheet
-update_costs_sheet()
+update_costs_sheet(monthly_fee, electricity_fee, subscription_fee, transfer_fee)
 
-update_consumption_sheet()
+# Call the update_consumption_sheet function to update the worksheet
+update_consumption_sheet(total_consumption, landlord_consumption)
 
