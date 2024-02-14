@@ -183,15 +183,6 @@ def update_consumption_sheet():
     print("Consumption total:", total_consumption)
     print("Consumption landlord:", landlord_consumption)
     
-"""   
-# Call the functions to collect user input
-monthly_fee = get_monthly_fee()
-electricity_fee = get_electricity_fee()
-subscription_fee = get_subscription_fee()
-transfer_fee = get_transfer_fee()
-total_consumption = get_total_consumption()
-landlord_consumption = get_landlord_consumption()
-"""
 
 print("Following data collection will inform you what your tenant shall pay for the monthly invoice usage.\n")
 # Call the update_costs_sheet function to update the worksheet
