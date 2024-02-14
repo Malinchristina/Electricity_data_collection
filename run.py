@@ -134,14 +134,21 @@ def get_landlord_consumption():
             print("Invalid input, please enter a number between 70 to 120.\n")
 
 
-def update_costs_sheet(monthly_fee, electricity_fee, subscription_fee, transfer_fee):
+def update_costs_sheet():
     """
     Update the costs sheet with the data from the functions get_monthly_fee
     get_electricity_fee, get_subscription_fee and get_transfer_fee
     and add a new row.
     """
-    print("Uppdating costs worksheet...\n")
+    
     costs_sheet = SHEET.worksheet("costs")
+
+    # Call the functions to collect user input
+    monthly_fee = get_monthly_fee()
+    electricity_fee = get_electricity_fee()
+    subscription_fee = get_subscription_fee()
+    transfer_fee = get_transfer_fee()
+    print("Uppdating costs worksheet...\n")
 
     # Append new row to cost sheet
     new_row_costs = [monthly_fee, electricity_fee, subscription_fee, transfer_fee]
@@ -154,14 +161,19 @@ def update_costs_sheet(monthly_fee, electricity_fee, subscription_fee, transfer_
     print("Transfer fee:", transfer_fee)
 
 
-def update_consumption_sheet(total_consumption, landlord_consumption):
+def update_consumption_sheet():
     """
     Update the consumption sheet with the data from the functions
     get_total_consumption and get_landlord_consumption
     and add a new row.
     """
-    print("Uppdating consumption worksheet...\n")
+    
     consumption_sheet = SHEET.worksheet("consumption")
+
+    # Call the functions to collect user input
+    total_consumption = get_total_consumption()
+    landlord_consumption = get_landlord_consumption()
+    print("Uppdating consumption worksheet...\n")
 
     # Append new row to consumption sheet
     new_row_consumption = [total_consumption, landlord_consumption]
@@ -171,7 +183,7 @@ def update_consumption_sheet(total_consumption, landlord_consumption):
     print("Consumption total:", total_consumption)
     print("Consumption landlord:", landlord_consumption)
     
-    
+"""   
 # Call the functions to collect user input
 monthly_fee = get_monthly_fee()
 electricity_fee = get_electricity_fee()
@@ -179,10 +191,12 @@ subscription_fee = get_subscription_fee()
 transfer_fee = get_transfer_fee()
 total_consumption = get_total_consumption()
 landlord_consumption = get_landlord_consumption()
+"""
 
+print("Following data collection will inform you what your tenant shall pay for the monthly invoice usage.\n")
 # Call the update_costs_sheet function to update the worksheet
-update_costs_sheet(monthly_fee, electricity_fee, subscription_fee, transfer_fee)
+update_costs_sheet()
 
 # Call the update_consumption_sheet function to update the worksheet
-update_consumption_sheet(total_consumption, landlord_consumption)
+update_consumption_sheet()
 
