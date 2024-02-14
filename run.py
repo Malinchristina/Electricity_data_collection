@@ -183,11 +183,16 @@ def update_consumption_sheet():
     print("Consumption total:", total_consumption)
     print("Consumption landlord:", landlord_consumption)
     
+# def calculate_tenants_invoice():
 
-print("Following data collection will inform you what your tenant shall pay for the monthly invoice usage.\n")
-# Call the update_costs_sheet function to update the worksheet
-update_costs_sheet()
 
-# Call the update_consumption_sheet function to update the worksheet
-update_consumption_sheet()
+def main():
+    # Call the update_costs_sheet function to update the worksheet
+    update_costs_sheet()
+    # Call the update_consumption_sheet function to update the worksheet
+    update_consumption_sheet()
+    
+
+print("Following data collection will inform you what your tenant shall pay for the monthly usage.\n")
+main()
 
