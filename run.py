@@ -186,13 +186,28 @@ def update_consumption_sheet():
     
 def calculate_tenants_consumption():
     """
-    Calculate tenants consumption
+    Calculate tenants consumption by fetching the last user input.
+    Stating the index of the cells so calculation can be added to correct cell.
+
     """
     print("Calculating tenants consumption...\n")
-    consumption = SHEET.worksheet("consumption").get_all_values()
+    consumption_sheet = SHEET.worksheet("consumption")  # Get the worksheet
+    consumption = consumption_sheet.get_all_values()
     consumption_row = consumption[-1]
-    print(consumption_row)
+    
+    # Stating the index of the cells
+    consumption_total_index = 0
+    consumption_landlord_index = 1
+    
+    consumption_total = int(consumption_row[consumption_total_index])
+    consumption_landlord = int(consumption_row[consumption_landlord_index])
 
+    consumption_tenant = consumption_total - consumption_landlord
+
+    # Update the cell in the same row and index 2 (0-based)
+    consumption_sheet.update_cell(len(consumption), 3, consumption_tenant)
+    print(consumption_tenant)
+   
 
 def main():
     # Call the update_costs_sheet function to update the worksheet
