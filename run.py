@@ -1,5 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
+from pprint import pprint
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -183,7 +184,14 @@ def update_consumption_sheet():
     print("Consumption total:", total_consumption)
     print("Consumption landlord:", landlord_consumption)
     
-# def calculate_tenants_invoice():
+def calculate_tenants_consumption():
+    """
+    Calculate tenants consumption
+    """
+    print("Calculating tenants consumption...\n")
+    consumption = SHEET.worksheet("consumption").get_all_values()
+    consumption_row = consumption[-1]
+    print(consumption_row)
 
 
 def main():
@@ -191,7 +199,8 @@ def main():
     update_costs_sheet()
     # Call the update_consumption_sheet function to update the worksheet
     update_consumption_sheet()
-    
+    calculate_tenants_consumption()
+
 
 print("Following data collection will inform you what your tenant shall pay for the monthly usage.\n")
 main()
