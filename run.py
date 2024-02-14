@@ -204,9 +204,9 @@ def calculate_tenants_consumption():
 
     consumption_tenant = consumption_total - consumption_landlord
 
-    # Update the cell in the same row and index 2 (0-based)
+    # Update the cell in the same row
     consumption_sheet.update_cell(len(consumption), 3, consumption_tenant)
-    print(consumption_tenant)
+    print("Consumption is:", consumption_tenant)
    
 
 def main():
