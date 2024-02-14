@@ -201,13 +201,41 @@ def calculate_tenants_consumption():
     
     consumption_total = int(consumption_row[consumption_total_index])
     consumption_landlord = int(consumption_row[consumption_landlord_index])
-
+    
+    global consumption_tenant
     consumption_tenant = consumption_total - consumption_landlord
 
     # Update the cell in the same row
     consumption_sheet.update_cell(len(consumption), 3, consumption_tenant)
     print("Consumption is:", consumption_tenant)
-   
+
+
+def calculate_total_cost():
+    """
+    Calculate the total cost that tenant shall pay
+    by fetching user input fees
+    """
+    print("Calculating tenants total cost...\n")
+    costs_sheet = SHEET.worksheet("costs")  # Get the worksheet
+    costs = costs_sheet.get_all_values()
+    costs_row = costs[-1]
+
+    # Stating the index of the cells
+    monthly_fee_index = 0
+    electricity_fee_index = 1
+    subscription_fee_index = 2
+    transfer_fee_index = 3
+    
+    monthly_fee = float(costs_row[monthly_fee_index])
+    electricity_fee = float(costs_row[electricity_fee_index])
+    subscription_fee = float(costs_row[subscription_fee_index])
+    transfer_fee = float(costs_row[transfer_fee_index])
+
+    cost_tenant = (consumption_tenant * electricity_fee) + (consumption_tenant * transfer_fee) + monthly_fee + subscription_fee
+
+    costs_sheet.update_cell(len(costs), 5, cost_tenant)
+    print("Total cost for the tenant is", cost_tenant)
+
 
 def main():
     # Call the update_costs_sheet function to update the worksheet
@@ -215,6 +243,7 @@ def main():
     # Call the update_consumption_sheet function to update the worksheet
     update_consumption_sheet()
     calculate_tenants_consumption()
+    calculate_total_cost()
 
 
 print("Following data collection will inform you what your tenant shall pay for the monthly usage.\n")
