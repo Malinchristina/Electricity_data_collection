@@ -213,7 +213,8 @@ def calculate_tenants_consumption():
 def calculate_total_cost():
     """
     Calculate the total cost that tenant shall pay
-    by fetching user input fees
+    by fetching user input fees and consumption
+    Stating index to cells to total cost pushes to correct cell.
     """
     print("Calculating tenants total cost...\n")
     costs_sheet = SHEET.worksheet("costs")  # Get the worksheet
@@ -238,9 +239,8 @@ def calculate_total_cost():
 
 
 def main():
-    # Call the update_costs_sheet function to update the worksheet
+    # Call all functions
     update_costs_sheet()
-    # Call the update_consumption_sheet function to update the worksheet
     update_consumption_sheet()
     calculate_tenants_consumption()
     calculate_total_cost()
