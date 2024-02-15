@@ -1,5 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
+import pyfiglet
 
 
 SCOPE = [
@@ -30,6 +31,8 @@ def get_monthly_fee():
             return int(data_str)
         else:
             print("Invalid input, please enter a 2 digit number.\n")
+    
+    
 
             
       
@@ -245,7 +248,9 @@ def main():
     calculate_tenants_consumption()
     calculate_total_cost()
 
-
-print("Following data collection will inform you what your tenant shall pay for the monthly usage.\n")
+result = pyfiglet.figlet_format("Electricity Calculation", font = "digital" ) 
+print(result) 
+print("Following data collection will inform you what your tenant shall pay for\
+ the monthly usage.\n")
 main()
 
