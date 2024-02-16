@@ -31,6 +31,9 @@ class ColoredText:
     def blue(text):
         return f"{Fore.BLUE}{text}{Style.RESET_ALL}" # Blue text
 
+    def yellow(text):
+        return f"{Fore.YELLOW}{text}{Style.RESET_ALL}" # Yellow text
+
 
 def get_monthly_fee():
     """
@@ -182,7 +185,7 @@ def update_costs_sheet():
     electricity_fee = get_electricity_fee()
     subscription_fee = get_subscription_fee()
     transfer_fee = get_transfer_fee()
-    print("Uppdating costs worksheet...\n")
+    print(ColoredText.yellow("Uppdating costs worksheet...\n"))
 
     # Append new row to cost sheet
     new_row_costs = [monthly_fee, electricity_fee, subscription_fee, transfer_fee]
@@ -207,7 +210,7 @@ def update_consumption_sheet():
     # Call the functions to collect user input
     total_consumption = get_total_consumption()
     landlord_consumption = get_landlord_consumption()
-    print("Uppdating consumption worksheet...\n")
+    print(ColoredText.yellow("Uppdating consumption worksheet...\n"))
 
     # Append new row to consumption sheet
     new_row_consumption = [total_consumption, landlord_consumption]
@@ -223,7 +226,7 @@ def calculate_tenants_consumption():
     Stating the index of the cells so calculation can be added to correct cell.
 
     """
-    print("Calculating tenants consumption...\n")
+    print(ColoredText.yellow("Calculating tenants consumption...\n"))
     consumption_sheet = SHEET.worksheet("consumption")  # Get the worksheet
     consumption = consumption_sheet.get_all_values()
     consumption_row = consumption[-1]
