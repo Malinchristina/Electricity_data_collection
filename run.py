@@ -2,6 +2,8 @@ import gspread
 from google.oauth2.service_account import Credentials
 import pyfiglet
 import os
+import colorama 
+from colorama import Fore, Style
 
 
 SCOPE = [
@@ -14,6 +16,16 @@ CREDS = Credentials.from_service_account_file("creds.json")
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("electricity-stats")
+
+class ColoredText:
+    """
+    Class for changing the color of texts
+    """
+    def green(text):
+        return f"{Fore.GREEN}{text}{Style.RESET_ALL}" # Green text
+
+    def red(text):
+        return f"{Fore.RED}{text}{Style.RESET_ALL}" # Red text
 
 
 def get_monthly_fee():
@@ -28,7 +40,7 @@ def get_monthly_fee():
     while True:
         data_str = input("Enter your data here:\n")
         if data_str.isdigit() and len(data_str) == 2:
-            print("Data is valid.\n")
+            print(ColoredText.green("Data is valid.\n"))
             return int(data_str)
         else:
             print("Invalid input, please enter a 2 digit number.\n")
@@ -40,7 +52,7 @@ def get_electricity_fee():
     Ask user to enter electricity fee data collected from the electricity company.
     Run a while loop to get the correct data, number with 1 decimal place.
     """
-    os.system('clear')
+    #os.system('clear')
     print("Please enter electricity fee data from electricity company.")
     print ("Data should be a number with 1 decimal. Example 1.5.\n")
 
