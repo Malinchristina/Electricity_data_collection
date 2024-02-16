@@ -192,7 +192,7 @@ def update_costs_sheet():
     print("Monthly fee:", monthly_fee)
     print("Electricity fee:", electricity_fee)
     print("Subscription fee:", subscription_fee)
-    print("Transfer fee:", transfer_fee)
+    print("Transfer fee:", transfer_fee,"\n")
 
 
 def update_consumption_sheet():
@@ -215,7 +215,7 @@ def update_consumption_sheet():
 
     print("Costs sheet updated with the following data:")
     print("Consumption total:", total_consumption)
-    print("Consumption landlord:", landlord_consumption)
+    print("Consumption landlord:", landlord_consumption,"\n")
     
 def calculate_tenants_consumption():
     """
@@ -240,7 +240,7 @@ def calculate_tenants_consumption():
 
     # Update the cell in the same row
     consumption_sheet.update_cell(len(consumption), 3, consumption_tenant)
-    print("Consumption is:", ColoredText.blue(consumption_tenant))
+    print("Consumption is:", ColoredText.blue(consumption_tenant),"\n")
 
 
 def calculate_total_cost():
