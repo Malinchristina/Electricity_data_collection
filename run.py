@@ -1,6 +1,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import pyfiglet
+import os
 
 
 SCOPE = [
@@ -32,8 +33,6 @@ def get_monthly_fee():
         else:
             print("Invalid input, please enter a 2 digit number.\n")
     
-    
-
             
       
 def get_electricity_fee():
@@ -41,6 +40,7 @@ def get_electricity_fee():
     Ask user to enter electricity fee data collected from the electricity company.
     Run a while loop to get the correct data, number with 1 decimal place.
     """
+    os.system('clear')
     print("Please enter electricity fee data from electricity company.")
     print ("Data should be a number with 1 decimal. Example 1.5.\n")
 
