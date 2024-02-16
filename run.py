@@ -43,7 +43,7 @@ def get_monthly_fee():
             print(ColoredText.green("Data is valid.\n"))
             return int(data_str)
         else:
-            print("Invalid input, please enter a 2 digit number.\n")
+            print(ColoredText.red("Invalid input, please enter a 2 digit number.\n"))
     
             
       
@@ -64,7 +64,7 @@ def get_electricity_fee():
             if data.is_integer():
                 print("Invalid input, please enter a number with one decimal place\n")
             elif round(data, 1) == data: #check if number has one decimal
-                print("Data is valid.\n")
+                print(ColoredText.green("Data is valid.\n"))
                 return data 
             else:
                 print("Invalid input, please enter a number with one decimal place\n")
@@ -85,7 +85,7 @@ def get_subscription_fee():
     while True:
         data_str = input("Enter your data here:\n")
         if data_str.isdigit() and len(data_str) == 3:
-            print("Data is valid.\n")
+            print(ColoredText.green("Data is valid.\n"))
             return int(data_str)
         else:
             print("Invalid input, please enter a 3 digit number.\n")
@@ -108,7 +108,7 @@ def get_transfer_fee():
             if data.is_integer():
                 print("Invalid input, please enter a number with one decimal place\n")
             elif round(data, 1) == data: #check if number has one decimal
-                print("Data is valid.\n")
+                print(ColoredText.green("Data is valid.\n"))
                 return data 
             else:
                 print("Invalid input, please enter a number with one decimal place\n")
@@ -128,7 +128,7 @@ def get_total_consumption():
     while True:
         data_str = input("Enter your data here, a number between 500 to 999:\n")
         if data_str.isdigit() and 500 <= int(data_str) <= 999:
-            print("Data is valid.\n")
+            print(ColoredText.green("Data is valid.\n"))
             return int(data_str)
         else:
             print("Invalid input, please enter a number between 500 to 999.\n")
@@ -146,7 +146,7 @@ def get_landlord_consumption():
     while True:
         data_str = input("Enter your data here, a number between 70 to 120:\n")
         if data_str.isdigit() and 70 <= int(data_str) <= 120:
-            print("Data is valid.\n")
+            print(ColoredText.green("Data is valid.\n"))
             return int(data_str)
         else:
             print("Invalid input, please enter a number between 70 to 120.\n")
