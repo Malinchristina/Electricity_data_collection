@@ -2,6 +2,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 import pyfiglet
 import os
+import time
 import colorama 
 from colorama import Fore, Style
 
@@ -27,6 +28,9 @@ class ColoredText:
     def red(text):
         return f"{Fore.RED}{text}{Style.RESET_ALL}" # Red text
 
+    def blue(text):
+        return f"{Fore.BLUE}{text}{Style.RESET_ALL}" # Blue text
+
 
 def get_monthly_fee():
     """
@@ -41,6 +45,8 @@ def get_monthly_fee():
         data_str = input("Enter your data here:\n")
         if data_str.isdigit() and len(data_str) == 2:
             print(ColoredText.green("Data is valid.\n"))
+            time.sleep(5)  # Wait for 5 seconds
+            os.system('clear')  # Clear the terminal
             return int(data_str)
         else:
             print(ColoredText.red("Invalid input, please enter a 2 digit number.\n"))
@@ -52,7 +58,7 @@ def get_electricity_fee():
     Ask user to enter electricity fee data collected from the electricity company.
     Run a while loop to get the correct data, number with 1 decimal place.
     """
-    #os.system('clear')
+    
     print("Please enter electricity fee data from electricity company.")
     print ("Data should be a number with 1 decimal. Example 1.5.\n")
 
@@ -65,6 +71,8 @@ def get_electricity_fee():
                 print(ColoredText.red("Invalid input, please enter a number with one decimal place\n"))
             elif round(data, 1) == data: #check if number has one decimal
                 print(ColoredText.green("Data is valid.\n"))
+                time.sleep(5)  # Wait for 5 seconds
+                os.system('clear')  # Clear the terminal
                 return data 
             else:
                 print(ColoredText.red("Invalid input, please enter a number with one decimal place\n"))
@@ -77,7 +85,7 @@ def get_subscription_fee():
     Ask user to enter subscription fee data collected from the electricity company.
     Run a while loop to get the correct data, 3 digit number.
     """
-    os.system('clear')
+    
     print("Please enter subscription fee data from electricity company.")
     print("Data should be a three digit number. Example 357.\n")
 
@@ -86,6 +94,8 @@ def get_subscription_fee():
         data_str = input("Enter your data here:\n")
         if data_str.isdigit() and len(data_str) == 3:
             print(ColoredText.green("Data is valid.\n"))
+            time.sleep(5)  # Wait for 5 seconds
+            os.system('clear')  # Clear the terminal
             return int(data_str)
         else:
             print(ColoredText.red("Invalid input, please enter a 3 digit number.\n"))
@@ -96,7 +106,7 @@ def get_transfer_fee():
     Ask user to enter transfer fee data collected from the electricity company.
     Run a while loop to get the correct data, number with 1 decimal place.
     """
-    os.system('clear')
+    
     print("Please enter transfer fee data from electricity company.")
     print ("Data should be a number with 1 decimal. Example 1.9.\n")
 
@@ -109,6 +119,8 @@ def get_transfer_fee():
                 print(ColoredText.red("Invalid input, please enter a number with one decimal place\n"))
             elif round(data, 1) == data: #check if number has one decimal
                 print(ColoredText.green("Data is valid.\n"))
+                time.sleep(5)  # Wait for 5 seconds
+                os.system('clear')  # Clear the terminal
                 return data 
             else:
                 print(ColoredText.red("Invalid input, please enter a number with one decimal place\n"))
@@ -129,6 +141,8 @@ def get_total_consumption():
         data_str = input("Enter your data here, a number between 500 to 999:\n")
         if data_str.isdigit() and 500 <= int(data_str) <= 999:
             print(ColoredText.green("Data is valid.\n"))
+            time.sleep(5)  # Wait for 5 seconds
+            os.system('clear')  # Clear the terminal
             return int(data_str)
         else:
             print(ColoredText.red("Invalid input, please enter a number between 500 to 999.\n"))
@@ -147,6 +161,8 @@ def get_landlord_consumption():
         data_str = input("Enter your data here, a number between 70 to 120:\n")
         if data_str.isdigit() and 70 <= int(data_str) <= 120:
             print(ColoredText.green("Data is valid.\n"))
+            time.sleep(5)  # Wait for 5 seconds
+            os.system('clear')  # Clear the terminal
             return int(data_str)
         else:
             print(ColoredText.red("Invalid input, please enter a number between 70 to 120.\n"))
@@ -224,7 +240,7 @@ def calculate_tenants_consumption():
 
     # Update the cell in the same row
     consumption_sheet.update_cell(len(consumption), 3, consumption_tenant)
-    print("Consumption is:", consumption_tenant)
+    print("Consumption is:", ColoredText.blue(consumption_tenant))
 
 
 def calculate_total_cost():
@@ -252,7 +268,7 @@ def calculate_total_cost():
     cost_tenant = (consumption_tenant * electricity_fee) + (consumption_tenant * transfer_fee) + monthly_fee + subscription_fee
 
     costs_sheet.update_cell(len(costs), 5, cost_tenant)
-    print("Total cost for the tenant is", cost_tenant)
+    print("Total cost for the tenant is", ColoredText.blue(cost_tenant))
 
 
 def main():
