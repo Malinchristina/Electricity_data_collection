@@ -268,7 +268,7 @@ def calculate_total_cost():
     cost_tenant = (consumption_tenant * electricity_fee) + (consumption_tenant * transfer_fee) + monthly_fee + subscription_fee
 
     costs_sheet.update_cell(len(costs), 5, cost_tenant)
-    print("Total cost for the tenant is", ColoredText.blue(cost_tenant))
+    print("Total cost for the tenant is", ColoredText.blue("{:.2f}".format(cost_tenant)))
 
 
 def main():
