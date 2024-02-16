@@ -65,6 +65,7 @@ def get_subscription_fee():
     Ask user to enter subscription fee data collected from the electricity company.
     Run a while loop to get the correct data, 3 digit number.
     """
+    os.system('clear')
     print("Please enter subscription fee data from electricity company.")
     print("Data should be a three digit number. Example 357.\n")
 
@@ -83,6 +84,7 @@ def get_transfer_fee():
     Ask user to enter transfer fee data collected from the electricity company.
     Run a while loop to get the correct data, number with 1 decimal place.
     """
+    os.system('clear')
     print("Please enter transfer fee data from electricity company.")
     print ("Data should be a number with 1 decimal. Example 1.9.\n")
 
