@@ -62,14 +62,14 @@ def get_electricity_fee():
         try:
             data = float(data_str)
             if data.is_integer():
-                print("Invalid input, please enter a number with one decimal place\n")
+                print(ColoredText.red("Invalid input, please enter a number with one decimal place\n"))
             elif round(data, 1) == data: #check if number has one decimal
                 print(ColoredText.green("Data is valid.\n"))
                 return data 
             else:
-                print("Invalid input, please enter a number with one decimal place\n")
+                print(ColoredText.red("Invalid input, please enter a number with one decimal place\n"))
         except ValueError:
-            print("Invalid input, please enter a number with one decimal place\n")
+            print(ColoredText.red("Invalid input, please enter a number with one decimal place\n"))
 
 
 def get_subscription_fee():
@@ -88,7 +88,7 @@ def get_subscription_fee():
             print(ColoredText.green("Data is valid.\n"))
             return int(data_str)
         else:
-            print("Invalid input, please enter a 3 digit number.\n")
+            print(ColoredText.red("Invalid input, please enter a 3 digit number.\n"))
 
 
 def get_transfer_fee():
@@ -106,14 +106,14 @@ def get_transfer_fee():
         try:
             data = float(data_str)
             if data.is_integer():
-                print("Invalid input, please enter a number with one decimal place\n")
+                print(ColoredText.red("Invalid input, please enter a number with one decimal place\n"))
             elif round(data, 1) == data: #check if number has one decimal
                 print(ColoredText.green("Data is valid.\n"))
                 return data 
             else:
-                print("Invalid input, please enter a number with one decimal place\n")
+                print(ColoredText.red("Invalid input, please enter a number with one decimal place\n"))
         except ValueError:
-            print("Invalid input, please enter a number with one decimal place\n")
+            print(ColoredText.red("Invalid input, please enter a number with one decimal place\n"))
 
 
 def get_total_consumption():
@@ -131,7 +131,7 @@ def get_total_consumption():
             print(ColoredText.green("Data is valid.\n"))
             return int(data_str)
         else:
-            print("Invalid input, please enter a number between 500 to 999.\n")
+            print(ColoredText.red("Invalid input, please enter a number between 500 to 999.\n"))
 
 
 def get_landlord_consumption():
@@ -149,7 +149,7 @@ def get_landlord_consumption():
             print(ColoredText.green("Data is valid.\n"))
             return int(data_str)
         else:
-            print("Invalid input, please enter a number between 70 to 120.\n")
+            print(ColoredText.red("Invalid input, please enter a number between 70 to 120.\n"))
 
 
 def update_costs_sheet():
