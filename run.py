@@ -45,7 +45,7 @@ def get_monthly_fee():
         data_str = input("Enter your data here:\n")
         if data_str.isdigit() and len(data_str) == 2:
             print(ColoredText.green("Data is valid.\n"))
-            time.sleep(5)  # Wait for 5 seconds
+            time.sleep(2)  # Wait for 2 seconds
             os.system('clear')  # Clear the terminal
             return int(data_str)
         else:
@@ -71,7 +71,7 @@ def get_electricity_fee():
                 print(ColoredText.red("Invalid input, please enter a number with one decimal place\n"))
             elif round(data, 1) == data: #check if number has one decimal
                 print(ColoredText.green("Data is valid.\n"))
-                time.sleep(5)  # Wait for 5 seconds
+                time.sleep(2)  # Wait for 2 seconds
                 os.system('clear')  # Clear the terminal
                 return data 
             else:
@@ -94,7 +94,7 @@ def get_subscription_fee():
         data_str = input("Enter your data here:\n")
         if data_str.isdigit() and len(data_str) == 3:
             print(ColoredText.green("Data is valid.\n"))
-            time.sleep(5)  # Wait for 5 seconds
+            time.sleep(2)  # Wait for 2 seconds
             os.system('clear')  # Clear the terminal
             return int(data_str)
         else:
@@ -119,7 +119,7 @@ def get_transfer_fee():
                 print(ColoredText.red("Invalid input, please enter a number with one decimal place\n"))
             elif round(data, 1) == data: #check if number has one decimal
                 print(ColoredText.green("Data is valid.\n"))
-                time.sleep(5)  # Wait for 5 seconds
+                time.sleep(2)  # Wait for 2 seconds
                 os.system('clear')  # Clear the terminal
                 return data 
             else:
@@ -141,7 +141,7 @@ def get_total_consumption():
         data_str = input("Enter your data here, a number between 500 to 999:\n")
         if data_str.isdigit() and 500 <= int(data_str) <= 999:
             print(ColoredText.green("Data is valid.\n"))
-            time.sleep(5)  # Wait for 5 seconds
+            time.sleep(2)  # Wait for 2 seconds
             os.system('clear')  # Clear the terminal
             return int(data_str)
         else:
@@ -161,7 +161,7 @@ def get_landlord_consumption():
         data_str = input("Enter your data here, a number between 70 to 120:\n")
         if data_str.isdigit() and 70 <= int(data_str) <= 120:
             print(ColoredText.green("Data is valid.\n"))
-            time.sleep(5)  # Wait for 5 seconds
+            time.sleep(2)  # Wait for 2 seconds
             os.system('clear')  # Clear the terminal
             return int(data_str)
         else:
