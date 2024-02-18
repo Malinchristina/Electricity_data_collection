@@ -1,32 +1,47 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Electricity data collection
 
-Welcome,
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **March 14, 2023**
+## Table Of Contents
 
-## Reminders
+* [Introduction](#Introduction)
+    * [Site Goals](#Site-Goals)
+    * [Target Audience](#Target-Audience)
+* [Features](#Features)
+    * [Collect data](#Collect data)
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+## Introduction
 
-## Creating the Heroku app
+This data collection aims for landlords in Sweden to calculate what the tenant shall pay for the monthly electricity usage. The data collection is a mix of information from the electricity supplier and the landlord's electricity meter. The data is stored in a Google sheet and also provided directly in the terminal.
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+### Site goals
 
-1. `heroku/python`
-2. `heroku/nodejs`
+To provide a simple data collection to calculate the cost of electricity monthly usage.
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+### Target audience
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+Landlords with one electricity meter and a tenant who wants to charge them for their electricity usage.
 
-Connect your GitHub repository and deploy as normal.
+## Features
 
-## Constraints
+#### Collect data from:
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+ - Invoice from the electricity supplier
+	 - Monthly fee
+	 - Electricity fee
+	 - Subscription fee
+	 - Transfer fee
+	 - Total monthly usage
 
----
+- Landlords monthly usage from meter
 
-Happy coding!
+#### Update costs sheet
+
+#### Update usage sheet
+
+#### Calculate the tenant's usage
+
+#### Calculate the tenant's monthly cost
+
+### Future features 
+
+If more tenants are added implement tenants name and list all data per tenant
