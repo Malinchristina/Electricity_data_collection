@@ -308,6 +308,6 @@ ascii_art = pyfiglet.figlet_format("Electricity Calculation for "\
 + current_month, font = "digital" )
 colored_ascii_art = ColoredText.magenta(ascii_art) # Color to magenta
 print(colored_ascii_art) 
-print("Following data collection will inform you what your tenant shall pay for\
-the monthly usage.\n")
+print("Following data collection will inform what the tenant shall pay\
+for the monthly usage.\n")
 main()
