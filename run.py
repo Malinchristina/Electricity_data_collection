@@ -150,10 +150,10 @@ def get_transfer_fee():
 
 def get_total_consumption():
     """
-    Ask user to enter total consumption from meeter.
+    Ask user to enter total consumption from meter.
     Run a while loop to get the correct data, 3 digit number.
     """
-    print("Please enter total consumption from meeter.")
+    print("Please enter total consumption from meter.")
     print("Data should be a three digit number between 500 to 999.\n")
 
     # Check so exactly 3 digit number between 500 to 999 is entered.
@@ -171,10 +171,10 @@ def get_total_consumption():
 
 def get_landlord_consumption():
     """
-    Ask user to enter total consumption from meeter.
+    Ask user to enter total consumption from meter.
     Run a while loop to get the correct data, number 70 to 120.
     """
-    print("Please enter total consumption from meeter.")
+    print("Please enter total consumption from meter.")
     print("Data should be a three digit number between 70 to 120.\n")
 
     # Check so exactly 3 digit number between 500 to 999 is entered.
