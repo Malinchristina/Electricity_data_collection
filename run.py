@@ -35,6 +35,9 @@ class ColoredText:
     def yellow(text):
         return f"{Fore.YELLOW}{text}{Style.RESET_ALL}" # Yellow text
 
+    def magenta(text):
+        return f"{Fore.MAGENTA}{text}{Style.RESET_ALL}" # Magenta text
+
 
 def get_monthly_fee():
     """
@@ -283,8 +286,9 @@ def main():
     calculate_total_cost()
 
 current_month = datetime.today().strftime('%B') # get current month
-result = pyfiglet.figlet_format("Electricity Calculation for " + current_month, font = "digital" ) 
-print(result) 
+ascii_art = pyfiglet.figlet_format("Electricity Calculation for " + current_month, font = "digital" )
+colored_ascii_art = ColoredText.magenta(ascii_art) # Color to magenta
+print(colored_ascii_art) 
 print("Following data collection will inform you what your tenant shall pay for\
  the monthly usage.\n")
 main()
