@@ -6,8 +6,9 @@
 * [Introduction](#Introduction)
     * [Site Goals](#Site-Goals)
     * [Target Audience](#Target-Audience)
-* [Features](#Features)
-    * [Collect data](#Collect data)
+ * [Features](#Features)
+	* [Planning](#Planning)
+    * [Collect data](#Collect-data)
 
 ## Introduction
 
@@ -22,6 +23,23 @@ To provide a simple data collection to calculate the cost of electricity monthly
 Landlords with one electricity meter and a tenant who wants to charge them for their electricity usage.
 
 ## Features
+
+### Planning
+
+I used [Lucid.app](www.lucidchart.com) to plan the data collection.
+
+Start
+
+![LCstart](docs/screenshots/lucidchart_start.png)
+
+User entries
+
+![LCuserentries](docs/screenshots/lucidchart_user entries.png)
+
+Calculations
+
+![LCcalculations](docs/screenshots/lucidchart_calculations.png)
+
 
 #### Collect data from:
 
@@ -45,3 +63,6 @@ Landlords with one electricity meter and a tenant who wants to charge them for t
 ### Future features 
 
 If more tenants are added implement tenants name and list all data per tenant
+
+
+[def]: docs/screenshots/lucidchart_start.png
