@@ -26,14 +26,18 @@ class ColoredText:
     def green(text):
         return f"{Fore.GREEN}{text}{Style.RESET_ALL}" # Green text
 
+
     def red(text):
         return f"{Fore.RED}{text}{Style.RESET_ALL}" # Red text
+
 
     def blue(text):
         return f"{Fore.BLUE}{text}{Style.RESET_ALL}" # Blue text
 
+
     def yellow(text):
         return f"{Fore.YELLOW}{text}{Style.RESET_ALL}" # Yellow text
+
 
     def magenta(text):
         return f"{Fore.MAGENTA}{text}{Style.RESET_ALL}" # Magenta text
@@ -57,17 +61,16 @@ def get_monthly_fee():
             return int(data_str)
         else:
             print(ColoredText.red("Invalid input, please enter a 2 digit\
-             number.\n"))
-    
-            
-      
+            number.\n"))
+
+
 def get_electricity_fee():
     """
     Ask user to enter electricity fee data collected from the
     electricity company.
     Run a while loop to get the correct data, number with 1 decimal place.
     """
-    
+
     print("Please enter electricity fee data from electricity company.")
     print ("Data should be a number with 1 decimal. Example 1.5.\n")
 
@@ -78,7 +81,7 @@ def get_electricity_fee():
             data = float(data_str)
             if data.is_integer():
                 print(ColoredText.red("Invalid input, please enter a number\
-                 with one decimal place\n"))
+                with one decimal place\n"))
             elif round(data, 1) == data: #check if number has one decimal
                 print(ColoredText.green("Data is valid.\n"))
                 time.sleep(2)  # Wait for 2 seconds
@@ -86,10 +89,10 @@ def get_electricity_fee():
                 return data 
             else:
                 print(ColoredText.red("Invalid input, please enter a number\
-                 with one decimal place\n"))
+                with one decimal place\n"))
         except ValueError:
             print(ColoredText.red("Invalid input, please enter a number\
-             with one decimal place\n"))
+            with one decimal place\n"))
 
 
 def get_subscription_fee():
@@ -98,7 +101,7 @@ def get_subscription_fee():
     the electricity company.
     Run a while loop to get the correct data, 3 digit number.
     """
-    
+
     print("Please enter subscription fee data from electricity company.")
     print("Data should be a three digit number. Example 357.\n")
 
@@ -112,7 +115,7 @@ def get_subscription_fee():
             return int(data_str)
         else:
             print(ColoredText.red("Invalid input, please enter a\
-             3 digit number.\n"))
+            3 digit number.\n"))
 
 
 def get_transfer_fee():
@@ -120,7 +123,7 @@ def get_transfer_fee():
     Ask user to enter transfer fee data collected from the electricity company.
     Run a while loop to get the correct data, number with 1 decimal place.
     """
-    
+
     print("Please enter transfer fee data from electricity company.")
     print ("Data should be a number with 1 decimal. Example 1.9.\n")
 
@@ -131,7 +134,7 @@ def get_transfer_fee():
             data = float(data_str)
             if data.is_integer():
                 print(ColoredText.red("Invalid input, please enter a number\
-                 with one decimal place\n"))
+                with one decimal place\n"))
             elif round(data, 1) == data: #check if number has one decimal
                 print(ColoredText.green("Data is valid.\n"))
                 time.sleep(2)  # Wait for 2 seconds
@@ -139,10 +142,10 @@ def get_transfer_fee():
                 return data 
             else:
                 print(ColoredText.red("Invalid input, please enter a number\
-                 with one decimal place\n"))
+                with one decimal place\n"))
         except ValueError:
             print(ColoredText.red("Invalid input, please enter a number\
-             with one decimal place\n"))
+            with one decimal place\n"))
 
 
 def get_total_consumption():
@@ -163,7 +166,7 @@ def get_total_consumption():
             return int(data_str)
         else:
             print(ColoredText.red("Invalid input, please enter a number\
-             between 500 to 999.\n"))
+            between 500 to 999.\n"))
 
 
 def get_landlord_consumption():
@@ -184,7 +187,7 @@ def get_landlord_consumption():
             return int(data_str)
         else:
             print(ColoredText.red("Invalid input, please enter a number\
-             between 70 to 120.\n"))
+            between 70 to 120.\n"))
 
 
 def update_costs_sheet():
@@ -221,7 +224,7 @@ def update_consumption_sheet():
     get_total_consumption and get_landlord_consumption
     and add a new row.
     """
-    
+
     consumption_sheet = SHEET.worksheet("consumption")
 
     # Call the functions to collect user input
@@ -236,25 +239,25 @@ def update_consumption_sheet():
     print("Costs sheet updated with the following data:")
     print("Consumption total:", total_consumption)
     print("Consumption landlord:", landlord_consumption,"\n")
-    
+
+
 def calculate_tenants_consumption():
     """
     Calculate tenants consumption by fetching the last user input.
     Stating the index of the cells so calculation can be added to correct cell.
-
     """
     print(ColoredText.yellow("Calculating tenants consumption...\n"))
     consumption_sheet = SHEET.worksheet("consumption")  # Get the worksheet
     consumption = consumption_sheet.get_all_values()
     consumption_row = consumption[-1]
-    
+
     # Stating the index of the cells
     consumption_total_index = 0
     consumption_landlord_index = 1
-    
+
     consumption_total = int(consumption_row[consumption_total_index])
     consumption_landlord = int(consumption_row[consumption_landlord_index])
-    
+
     global consumption_tenant
     consumption_tenant = consumption_total - consumption_landlord
 
@@ -272,20 +275,20 @@ def calculate_total_cost():
     print("Calculating tenants total cost...\n")
     costs_sheet = SHEET.worksheet("costs")  # Get the worksheet
     costs = costs_sheet.get_all_values()
-    costs_row = costs[-1]
+    costs_row = costs[ - 1]
 
     # Stating the index of the cells
     monthly_fee_index = 0
     electricity_fee_index = 1
     subscription_fee_index = 2
     transfer_fee_index = 3
-    
+
     monthly_fee = float(costs_row[monthly_fee_index])
     electricity_fee = float(costs_row[electricity_fee_index])
     subscription_fee = float(costs_row[subscription_fee_index])
     transfer_fee = float(costs_row[transfer_fee_index])
 
-    cost_tenant = (consumption_tenant * electricity_fee) +\
+    cost_tenant = (consumption_tenant * electricity_fee) + \
     (consumption_tenant * transfer_fee) + monthly_fee + subscription_fee
 
     costs_sheet.update_cell(len(costs), 5, cost_tenant)
@@ -300,12 +303,11 @@ def main():
     calculate_tenants_consumption()
     calculate_total_cost()
 
-current_month = datetime.today().strftime('%B') # get current month
+current_month = datetime.today().strftime(' % B') # get current month
 ascii_art = pyfiglet.figlet_format("Electricity Calculation for "\
 + current_month, font = "digital" )
 colored_ascii_art = ColoredText.magenta(ascii_art) # Color to magenta
 print(colored_ascii_art) 
 print("Following data collection will inform you what your tenant shall pay for\
- the monthly usage.\n")
+the monthly usage.\n")
 main()
-
