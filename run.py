@@ -45,10 +45,10 @@ class ColoredText:
 
 def get_monthly_fee():
     """
-    Ask user to enter monthly fee data collected from the electricity company.
+    Ask user to enter monthly fee data collected from the electricity supplier.
     Run a while loop to get the correct data, 2 digit number.
     """
-    print("Please enter monthly fee data from electricity company.")
+    print("Please enter monthly fee data from electricity supplier.")
     print("Data should be a two digit number. Example 20.\n")
 
     # Check so exactly 2 digit number is entered.
@@ -67,11 +67,11 @@ def get_monthly_fee():
 def get_electricity_fee():
     """
     Ask user to enter electricity fee data collected from the
-    electricity company.
+    electricity supplier.
     Run a while loop to get the correct data, number with 1 decimal place.
     """
 
-    print("Please enter electricity fee data from electricity company.")
+    print("Please enter electricity fee data from electricity supplier.")
     print ("Data should be a number with 1 decimal. Example 1.5.\n")
 
     # Check if float number with 1 decimal is entered.
@@ -98,11 +98,11 @@ def get_electricity_fee():
 def get_subscription_fee():
     """
     Ask user to enter subscription fee data collected from
-    the electricity company.
+    the electricity supplier.
     Run a while loop to get the correct data, 3 digit number.
     """
 
-    print("Please enter subscription fee data from electricity company.")
+    print("Please enter subscription fee data from electricity supplier.")
     print("Data should be a three digit number. Example 357.\n")
 
     # Check so exactly 3 digit number is entered.
@@ -120,11 +120,11 @@ def get_subscription_fee():
 
 def get_transfer_fee():
     """
-    Ask user to enter transfer fee data collected from the electricity company.
+    Ask user to enter transfer fee data collected from the electricity supplier.
     Run a while loop to get the correct data, number with 1 decimal place.
     """
 
-    print("Please enter transfer fee data from electricity company.")
+    print("Please enter transfer fee data from electricity supplier.")
     print ("Data should be a number with 1 decimal. Example 1.9.\n")
 
     # Check if float number with 1 decimal is entered.
@@ -204,7 +204,7 @@ def update_costs_sheet():
     electricity_fee = get_electricity_fee()
     subscription_fee = get_subscription_fee()
     transfer_fee = get_transfer_fee()
-    print(ColoredText.yellow("Uppdating costs worksheet...\n"))
+    print(ColoredText.yellow("Updating costs worksheet...\n"))
 
     # Append new row to cost sheet
     new_row_costs = [monthly_fee, electricity_fee, subscription_fee,\
@@ -230,7 +230,7 @@ def update_consumption_sheet():
     # Call the functions to collect user input
     total_consumption = get_total_consumption()
     landlord_consumption = get_landlord_consumption()
-    print(ColoredText.yellow("Uppdating consumption worksheet...\n"))
+    print(ColoredText.yellow("Updating consumption worksheet...\n"))
 
     # Append new row to consumption sheet
     new_row_consumption = [total_consumption, landlord_consumption]
