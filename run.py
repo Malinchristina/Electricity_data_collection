@@ -263,7 +263,8 @@ def calculate_tenants_consumption():
 
     # Update the cell in the same row
     consumption_sheet.update_cell(len(consumption), 3, consumption_tenant)
-    print("Consumption is:", ColoredText.blue(consumption_tenant),"\n")
+    print("Consumption is:", ColoredText.blue(str(consumption_tenant)\
+    + " kWh"),"\n")
 
 
 def calculate_total_cost():
@@ -272,7 +273,7 @@ def calculate_total_cost():
     by fetching user input fees and consumption
     Stating index to cells to total cost pushes to correct cell.
     """
-    print("Calculating tenants total cost...\n")
+    print(ColoredText.yellow("Calculating tenants total cost...\n"))
     costs_sheet = SHEET.worksheet("costs")  # Get the worksheet
     costs = costs_sheet.get_all_values()
     costs_row = costs[ - 1]
@@ -292,8 +293,8 @@ def calculate_total_cost():
     (consumption_tenant * transfer_fee) + monthly_fee + subscription_fee
 
     costs_sheet.update_cell(len(costs), 5, cost_tenant)
-    print("Total cost for the tenant is",\
-    ColoredText.blue("{:.2f}".format(cost_tenant)))
+    print("Total cost for the tenant for " + current_month + " is",\
+    ColoredText.blue("{:.2f}".format(cost_tenant) + " SEK"),"\n")
 
 
 def main():
