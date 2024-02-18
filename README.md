@@ -34,7 +34,7 @@ Start
 
 User entries
 
-![LCuserentries](docs/screenshots/lucidchart_user entries.png)
+![LCuserentries](docs/screenshots/lucidchart_user_entries.png)
 
 Calculations
 
