@@ -303,7 +303,7 @@ def main():
     calculate_tenants_consumption()
     calculate_total_cost()
 
-current_month = datetime.today().strftime(' % B') # get current month
+current_month = datetime.today().strftime('%B') # get current month
 ascii_art = pyfiglet.figlet_format("Electricity Calculation for "\
 + current_month, font = "digital" )
 colored_ascii_art = ColoredText.magenta(ascii_art) # Color to magenta
