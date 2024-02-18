@@ -5,6 +5,7 @@ import os
 import time
 import colorama 
 from colorama import Fore, Style
+from datetime import datetime
 
 
 SCOPE = [
@@ -281,7 +282,8 @@ def main():
     calculate_tenants_consumption()
     calculate_total_cost()
 
-result = pyfiglet.figlet_format("Electricity Calculation", font = "digital" ) 
+current_month = datetime.today().strftime('%B') # get current month
+result = pyfiglet.figlet_format("Electricity Calculation for " + current_month, font = "digital" ) 
 print(result) 
 print("Following data collection will inform you what your tenant shall pay for\
  the monthly usage.\n")
