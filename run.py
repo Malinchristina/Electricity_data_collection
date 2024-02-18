@@ -56,13 +56,15 @@ def get_monthly_fee():
             os.system('clear')  # Clear the terminal
             return int(data_str)
         else:
-            print(ColoredText.red("Invalid input, please enter a 2 digit number.\n"))
+            print(ColoredText.red("Invalid input, please enter a 2 digit\
+             number.\n"))
     
             
       
 def get_electricity_fee():
     """
-    Ask user to enter electricity fee data collected from the electricity company.
+    Ask user to enter electricity fee data collected from the
+    electricity company.
     Run a while loop to get the correct data, number with 1 decimal place.
     """
     
@@ -75,21 +77,25 @@ def get_electricity_fee():
         try:
             data = float(data_str)
             if data.is_integer():
-                print(ColoredText.red("Invalid input, please enter a number with one decimal place\n"))
+                print(ColoredText.red("Invalid input, please enter a number\
+                 with one decimal place\n"))
             elif round(data, 1) == data: #check if number has one decimal
                 print(ColoredText.green("Data is valid.\n"))
                 time.sleep(2)  # Wait for 2 seconds
                 os.system('clear')  # Clear the terminal
                 return data 
             else:
-                print(ColoredText.red("Invalid input, please enter a number with one decimal place\n"))
+                print(ColoredText.red("Invalid input, please enter a number\
+                 with one decimal place\n"))
         except ValueError:
-            print(ColoredText.red("Invalid input, please enter a number with one decimal place\n"))
+            print(ColoredText.red("Invalid input, please enter a number\
+             with one decimal place\n"))
 
 
 def get_subscription_fee():
     """
-    Ask user to enter subscription fee data collected from the electricity company.
+    Ask user to enter subscription fee data collected from
+    the electricity company.
     Run a while loop to get the correct data, 3 digit number.
     """
     
@@ -105,7 +111,8 @@ def get_subscription_fee():
             os.system('clear')  # Clear the terminal
             return int(data_str)
         else:
-            print(ColoredText.red("Invalid input, please enter a 3 digit number.\n"))
+            print(ColoredText.red("Invalid input, please enter a\
+             3 digit number.\n"))
 
 
 def get_transfer_fee():
@@ -123,16 +130,19 @@ def get_transfer_fee():
         try:
             data = float(data_str)
             if data.is_integer():
-                print(ColoredText.red("Invalid input, please enter a number with one decimal place\n"))
+                print(ColoredText.red("Invalid input, please enter a number\
+                 with one decimal place\n"))
             elif round(data, 1) == data: #check if number has one decimal
                 print(ColoredText.green("Data is valid.\n"))
                 time.sleep(2)  # Wait for 2 seconds
                 os.system('clear')  # Clear the terminal
                 return data 
             else:
-                print(ColoredText.red("Invalid input, please enter a number with one decimal place\n"))
+                print(ColoredText.red("Invalid input, please enter a number\
+                 with one decimal place\n"))
         except ValueError:
-            print(ColoredText.red("Invalid input, please enter a number with one decimal place\n"))
+            print(ColoredText.red("Invalid input, please enter a number\
+             with one decimal place\n"))
 
 
 def get_total_consumption():
@@ -152,7 +162,8 @@ def get_total_consumption():
             os.system('clear')  # Clear the terminal
             return int(data_str)
         else:
-            print(ColoredText.red("Invalid input, please enter a number between 500 to 999.\n"))
+            print(ColoredText.red("Invalid input, please enter a number\
+             between 500 to 999.\n"))
 
 
 def get_landlord_consumption():
@@ -172,7 +183,8 @@ def get_landlord_consumption():
             os.system('clear')  # Clear the terminal
             return int(data_str)
         else:
-            print(ColoredText.red("Invalid input, please enter a number between 70 to 120.\n"))
+            print(ColoredText.red("Invalid input, please enter a number\
+             between 70 to 120.\n"))
 
 
 def update_costs_sheet():
@@ -181,7 +193,7 @@ def update_costs_sheet():
     get_electricity_fee, get_subscription_fee and get_transfer_fee
     and add a new row.
     """
-    
+
     costs_sheet = SHEET.worksheet("costs")
 
     # Call the functions to collect user input
@@ -192,7 +204,8 @@ def update_costs_sheet():
     print(ColoredText.yellow("Uppdating costs worksheet...\n"))
 
     # Append new row to cost sheet
-    new_row_costs = [monthly_fee, electricity_fee, subscription_fee, transfer_fee]
+    new_row_costs = [monthly_fee, electricity_fee, subscription_fee,\
+    transfer_fee]
     costs_sheet.append_row(new_row_costs)
 
     print("Costs sheet updated with the following data:")
@@ -272,10 +285,12 @@ def calculate_total_cost():
     subscription_fee = float(costs_row[subscription_fee_index])
     transfer_fee = float(costs_row[transfer_fee_index])
 
-    cost_tenant = (consumption_tenant * electricity_fee) + (consumption_tenant * transfer_fee) + monthly_fee + subscription_fee
+    cost_tenant = (consumption_tenant * electricity_fee) +\
+    (consumption_tenant * transfer_fee) + monthly_fee + subscription_fee
 
     costs_sheet.update_cell(len(costs), 5, cost_tenant)
-    print("Total cost for the tenant is", ColoredText.blue("{:.2f}".format(cost_tenant)))
+    print("Total cost for the tenant is",\
+    ColoredText.blue("{:.2f}".format(cost_tenant)))
 
 
 def main():
@@ -286,7 +301,8 @@ def main():
     calculate_total_cost()
 
 current_month = datetime.today().strftime('%B') # get current month
-ascii_art = pyfiglet.figlet_format("Electricity Calculation for " + current_month, font = "digital" )
+ascii_art = pyfiglet.figlet_format("Electricity Calculation for "\
++ current_month, font = "digital" )
 colored_ascii_art = ColoredText.magenta(ascii_art) # Color to magenta
 print(colored_ascii_art) 
 print("Following data collection will inform you what your tenant shall pay for\
