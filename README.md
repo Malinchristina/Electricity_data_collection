@@ -113,11 +113,17 @@ In the creds file, I copied the email address and shared my Google Sheets with t
 
 ## Testing 
 
+All functions have been tested to ensure they work correctly and show valid user feedback.
+
+![Test_1](docs/screenshots/testing/test_overview_1.png)
+
+![Test_2](docs/screenshots/testing/test_overview_2.png)
+
 ### Functional testing
 
 ### Pep8 validation
 
-Validation was done accordint to [PEP8](https://pep8ci.herokuapp.com/#) rules. Most warnings were due to redundant whitespace or whitespace missing which are all corrected.
+Validation was done according to [PEP8](https://pep8ci.herokuapp.com/#) rules. Most warnings were due to redundant whitespace or whitespace missing which are all corrected.
 
 ### Unfixed Bugs
 
