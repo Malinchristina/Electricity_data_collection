@@ -3,7 +3,7 @@ from google.oauth2.service_account import Credentials
 import pyfiglet
 import os
 import time
-import colorama 
+import colorama
 from colorama import Fore, Style
 from datetime import datetime
 
@@ -19,28 +19,26 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("electricity-stats")
 
+
 class ColoredText:
     """
     Class for changing the color of texts
     """
-    def green(text):
-        return f"{Fore.GREEN}{text}{Style.RESET_ALL}" # Green text
 
+    def green(text):
+        return f"{Fore.GREEN}{text}{Style.RESET_ALL}"  # Green text
 
     def red(text):
-        return f"{Fore.RED}{text}{Style.RESET_ALL}" # Red text
-
+        return f"{Fore.RED}{text}{Style.RESET_ALL}"  # Red text
 
     def blue(text):
-        return f"{Fore.BLUE}{text}{Style.RESET_ALL}" # Blue text
-
+        return f"{Fore.BLUE}{text}{Style.RESET_ALL}"  # Blue text
 
     def yellow(text):
-        return f"{Fore.YELLOW}{text}{Style.RESET_ALL}" # Yellow text
-
+        return f"{Fore.YELLOW}{text}{Style.RESET_ALL}"  # Yellow text
 
     def magenta(text):
-        return f"{Fore.MAGENTA}{text}{Style.RESET_ALL}" # Magenta text
+        return f"{Fore.MAGENTA}{text}{Style.RESET_ALL}"  # Magenta text
 
 
 def get_monthly_fee():
@@ -72,7 +70,7 @@ def get_electricity_fee():
     """
 
     print("Please enter electricity fee data from electricity supplier.")
-    print ("Data should be a number with 1 decimal. Example 1.5.\n")
+    print("Data should be a number with 1 decimal. Example 1.5.\n")
 
     # Check if float number with 1 decimal is entered.
     while True:
@@ -82,11 +80,11 @@ def get_electricity_fee():
             if data.is_integer():
                 print(ColoredText.red("Invalid input, please enter a number\
                 with one decimal place\n"))
-            elif round(data, 1) == data: #check if number has one decimal
+            elif round(data, 1) == data:  # check if number has one decimal
                 print(ColoredText.green("Data is valid.\n"))
                 time.sleep(2)  # Wait for 2 seconds
                 os.system('clear')  # Clear the terminal
-                return data 
+                return data
             else:
                 print(ColoredText.red("Invalid input, please enter a number\
                 with one decimal place\n"))
@@ -120,12 +118,13 @@ def get_subscription_fee():
 
 def get_transfer_fee():
     """
-    Ask user to enter transfer fee data collected from the electricity supplier.
+    Ask user to enter transfer fee data collected from the electricity
+    supplier.
     Run a while loop to get the correct data, number with 1 decimal place.
     """
 
     print("Please enter transfer fee data from electricity supplier.")
-    print ("Data should be a number with 1 decimal. Example 1.9.\n")
+    print("Data should be a number with 1 decimal. Example 1.9.\n")
 
     # Check if float number with 1 decimal is entered.
     while True:
@@ -135,11 +134,11 @@ def get_transfer_fee():
             if data.is_integer():
                 print(ColoredText.red("Invalid input, please enter a number\
                 with one decimal place\n"))
-            elif round(data, 1) == data: #check if number has one decimal
+            elif round(data, 1) == data:  # check if number has one decimal
                 print(ColoredText.green("Data is valid.\n"))
                 time.sleep(2)  # Wait for 2 seconds
                 os.system('clear')  # Clear the terminal
-                return data 
+                return data
             else:
                 print(ColoredText.red("Invalid input, please enter a number\
                 with one decimal place\n"))
@@ -158,7 +157,8 @@ def get_total_consumption():
 
     # Check so exactly 3 digit number between 500 to 999 is entered.
     while True:
-        data_str = input("Enter your data here, a number between 500 to 999:\n")
+        data_str = input("Enter your data here, a number \
+        between 500 to 999:\n")
         if data_str.isdigit() and 500 <= int(data_str) <= 999:
             print(ColoredText.green("Data is valid.\n"))
             time.sleep(2)  # Wait for 2 seconds
@@ -215,7 +215,7 @@ def update_costs_sheet():
     print("Monthly fee:", monthly_fee)
     print("Electricity fee:", electricity_fee)
     print("Subscription fee:", subscription_fee)
-    print("Transfer fee:", transfer_fee,"\n")
+    print("Transfer fee:", transfer_fee, "\n")
 
 
 def update_consumption_sheet():
@@ -238,7 +238,7 @@ def update_consumption_sheet():
 
     print("Costs sheet updated with the following data:")
     print("Consumption total:", total_consumption)
-    print("Consumption landlord:", landlord_consumption,"\n")
+    print("Consumption landlord:", landlord_consumption, "\n")
 
 
 def calculate_tenants_consumption():
@@ -264,7 +264,7 @@ def calculate_tenants_consumption():
     # Update the cell in the same row
     consumption_sheet.update_cell(len(consumption), 3, consumption_tenant)
     print("Consumption is:", ColoredText.blue(str(consumption_tenant)\
-    + " kWh"),"\n")
+    + " kWh"), "\n")
 
 
 def calculate_total_cost():
@@ -276,7 +276,7 @@ def calculate_total_cost():
     print(ColoredText.yellow("Calculating tenants total cost...\n"))
     costs_sheet = SHEET.worksheet("costs")  # Get the worksheet
     costs = costs_sheet.get_all_values()
-    costs_row = costs[ - 1]
+    costs_row = costs[- 1]
 
     # Stating the index of the cells
     monthly_fee_index = 0
@@ -294,7 +294,7 @@ def calculate_total_cost():
 
     costs_sheet.update_cell(len(costs), 5, cost_tenant)
     print("Total cost for the tenant for " + current_month + " is",\
-    ColoredText.blue("{:.2f}".format(cost_tenant) + " SEK"),"\n")
+    ColoredText.blue("{:.2f}".format(cost_tenant) + " SEK"), "\n")
 
 
 def main():
@@ -304,11 +304,12 @@ def main():
     calculate_tenants_consumption()
     calculate_total_cost()
 
-current_month = datetime.today().strftime('%B') # get current month
+
+current_month = datetime.today().strftime('%B')  # get current month
 ascii_art = pyfiglet.figlet_format("Electricity Calculation for "\
-+ current_month, font = "digital" )
-colored_ascii_art = ColoredText.magenta(ascii_art) # Color to magenta
-print(colored_ascii_art) 
++ current_month, font="digital")
+colored_ascii_art = ColoredText.magenta(ascii_art)  # Color to magenta
+print(colored_ascii_art)
 print("Following data collection will inform what the tenant shall \
 pay for the monthly usage.\n")
 main()
