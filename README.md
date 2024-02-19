@@ -106,3 +106,14 @@ characters
 Configurations
 
 ## Credits 
+- The app is inspired by Love Sandwiches 
+- [Tutorials point](https://www.tutorialspoint.com/how-do-i-call-a-variable-from-another-function-in-python) - How to make a variable global
+- [Geegs for geeks](https://www.geeksforgeeks.org/python-ascii-art-using-pyfiglet-module/) - How to use pyfiglet for ASCII art
+- [Scaler](https://www.scaler.com/topics/how-to-clear-screen-in-python/) - How to clear screen with os
+- [Pypi](https://pypi.org/project/colorama/) - How to import colorama
+- [Snyk Advisor](https://snyk.io/advisor/python/colorama/functions/colorama.Style.RESET_ALL) - How to use colorama
+- [FreeCodeCamp](https://www.freecodecamp.org/news/the-python-sleep-function-how-to-make-python-wait-a-few-seconds-before-continuing-with-example-commands/#:~:text=You%20can%20use%20Python%27s%20sleep,time%20delay%20to%20your%20code) - How to use sleep function to show print message before clear function
+- [Ask Python](https://www.askpython.com/python/string/decimal-formatting-0f-vs-1f) - How to show 2 decimals
+- [Stack Overflow](https://stackoverflow.com/questions/6557553/get-month-name-from-number) - Ho to show the current month as string
+- Thanks to fellow student Ben Gilbert for testing the app
+- Thanks to my mentor Gareth McGirr
