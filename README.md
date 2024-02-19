@@ -11,6 +11,7 @@
 	* [Planning](#Planning)
 	* [Error handling](#Error-handling)
 	* [Existing features](#Existing-features)
+		* [API](#API)
 		* [Data collection](#Data-collection)
 		* [Calculation](#Calculation)
 	* [Future features](#Future-features)
@@ -59,11 +60,34 @@ I used [Lucid.app](www.lucidchart.com) to plan the data collection.
 
 ### Error handling
 
+Print messages were used throughout writing the code to ensure no errors occurred.
+
 ### Existing features
+
+#### API
+
+Google Sheets was used to store the data collection and was set up as below.
+
+- At [Google Cloud](https://console.cloud.google.com/) Create a new project.
+- Name the project.
+- Select the project
+- Go to APIs & Services and select library
+- Search for Google Drive API, select it and press enable
+- Then press create credentials
+- Select as in the image below
+- Then choose service role
+- Next, click on the generated email address
+- Add service key
+- Choose json and create
+- Go back to the library, search for Google Sheets API, and press enable.
+
+I then uploaded the .json file to the IDE and renamed it creds. 
+
+In the creds file, I copied the email address and shared my Google Sheets with that address.
 
 #### Data collection
 
- - Invoice from the electricity supplier
+ - Below fees are retrieved from the invoice from the electricity supplier
 	 - Monthly fee
 	 - Electricity fee
 	 - Subscription fee
@@ -84,7 +108,8 @@ I used [Lucid.app](www.lucidchart.com) to plan the data collection.
 
 ### Future features 
 
-If more tenants are added implement tenants name and list all data per tenant
+- If more tenants are added implement the tenant's name and show costs for each tenant separately. 
+- A weekly debit instead of monthly for weekly tenants.
 
 ## Testing 
 
@@ -92,16 +117,23 @@ If more tenants are added implement tenants name and list all data per tenant
 
 ### Pep8 validation
 
-white spaces
-characters
+Validation was done accordint to [PEP8](https://pep8ci.herokuapp.com/#) rules. Most warnings were due to redundant whitespace or whitespace missing which are all corrected.
 
 ### Unfixed Bugs
 
 ## Deployment
 
+The app was created in Visual Studio Code editor desktop app. After some issues with the desktop app that could be linked to homebrew, I used Visual Studio Code in the browser.
+
 ### Github
 
+The repository was created on GitHub.
+
 ### Heroku
+
+The app was deployed on Heroku.
+
+Even after running pip3 install -r requirements.txt some requirements were not added so an error message was shown when launching Heroku. The requirements for pyfiglet and colorama were added manually.
 
 Configurations
 
