@@ -21,6 +21,7 @@
 * [Deployment](#Deployment)
 	* [Github](#Github)
 	* [Heroku](#Heroku)
+* [Additional comments](#Additional-comments)
 * [Credits](#Credits)
 
 ## Introduction
@@ -113,19 +114,21 @@ In the creds file, I copied the email address and shared my Google Sheets with t
 
 ## Testing 
 
+### Functional testing
+
 All functions have been tested to ensure they work correctly and show valid user feedback.
 
 ![Test_1](docs/screenshots/testing/test_overview_1.png)
 
 ![Test_2](docs/screenshots/testing/test_overview_2.png)
 
-### Functional testing
-
 ### Pep8 validation
 
-Validation was done according to [PEP8](https://pep8ci.herokuapp.com/#) rules. Most warnings were due to redundant whitespace or whitespace missing which are all corrected.
+Validation was done according to [PEP8](https://pep8ci.herokuapp.com/#) rules. Most warnings were due to redundant whitespace or whitespace missing. And also redundant backslash and under-indentations. All of which are corrected.
 
 ### Unfixed Bugs
+
+Nothing to note.
 
 ## Deployment
 
@@ -142,6 +145,10 @@ The app was deployed on Heroku.
 Even after running pip3 install -r requirements.txt some requirements were not added so an error message was shown when launching Heroku. The requirements for pyfiglet and colorama were added manually.
 
 Configurations
+
+## Additional comments
+
+I had issues with the Visaul Studio Code desktop app. This was most likely due to the laptop's operating system being too old for all the requirements such as homebrew. This led me to have problems re-linking to github and when trying to set it up again I forgot to change my name when I copied the command line. So on commits from February 9th and 11th, commit looks to have been done by John Doe. I then used Visual Studio Code in the browser instead.
 
 ## Credits 
 - The app is inspired by Love Sandwiches 
