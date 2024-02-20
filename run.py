@@ -187,10 +187,10 @@ def get_total_consumption():
 
 def get_landlord_consumption():
     """
-    Ask user to enter total consumption from meter.
+    Ask user to enter landlords total consumption.
     Run a while loop to get the correct data, number 70 to 120.
     """
-    print("Please enter total consumption from meter.")
+    print("Please enter landlords total consumption.")
     print("Data should be a three digit number between 70 to 120.\n")
 
     # Check so exactly 3 digit number between 500 to 999 is entered.
@@ -312,6 +312,7 @@ def calculate_total_cost():
     costs_sheet.update_cell(len(costs), 5, cost_tenant)
     print("Total cost for the tenant for " + current_month + " is "
           + ColoredText.blue("{:.2f}".format(cost_tenant) + " SEK"), "\n")
+    print(ColoredText.yellow("End of data collection."))
 
 
 def main():
