@@ -3,7 +3,6 @@ from google.oauth2.service_account import Credentials
 import pyfiglet
 import os
 import time
-import colorama
 from colorama import Fore, Style
 from datetime import datetime
 
