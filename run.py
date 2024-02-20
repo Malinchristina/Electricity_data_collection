@@ -20,22 +20,38 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("electricity-stats")
 
 
-class ColoredText:
+class ColoredText:  # Class for changing the color of texts
     """
-    Class for changing the color of texts
+    Class for changing the text color to green
     """
 
     def green(text):
         return f"{Fore.GREEN}{text}{Style.RESET_ALL}"  # Green text
 
+    """
+    Class for changing the text color to red
+    """
+
     def red(text):
         return f"{Fore.RED}{text}{Style.RESET_ALL}"  # Red text
+
+    """
+    Class for changing the text color to blue
+    """
 
     def blue(text):
         return f"{Fore.BLUE}{text}{Style.RESET_ALL}"  # Blue text
 
+    """
+    Class for changing the text color to yellow
+    """
+
     def yellow(text):
         return f"{Fore.YELLOW}{text}{Style.RESET_ALL}"  # Yellow text
+
+    """
+    Class for changing the text color to cyan
+    """
 
     def cyan(text):
         return f"{Fore.CYAN}{text}{Style.RESET_ALL}"  # Cyan text
