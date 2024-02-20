@@ -165,7 +165,7 @@ def get_total_consumption():
             os.system('clear')  # Clear the terminal
             return int(data_str)
         else:
-            print(ColoredText.red("Invalid input, please enter a number\
+            print(ColoredText.red("Invalid input, please enter a number \
             between 500 to 999.\n"))
 
 
