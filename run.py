@@ -263,7 +263,7 @@ def calculate_tenants_consumption():
 
     # Update the cell in the same row
     consumption_sheet.update_cell(len(consumption), 3, consumption_tenant)
-    print("Consumption is:", ColoredText.blue(str(consumption_tenant) \
+    print("Consumption is:", ColoredText.blue(str(consumption_tenant)
           + " kWh"), "\n")
 
 
@@ -294,8 +294,8 @@ def calculate_total_cost():
                    + monthly_fee + subscription_fee)
 
     costs_sheet.update_cell(len(costs), 5, cost_tenant)
-    print("Total cost for the tenant for " + current_month + " is", \
-          ColoredText.blue("{:.2f}".format(cost_tenant) + " SEK"), "\n")
+    print("Total cost for the tenant for " + current_month + " is "
+          + ColoredText.blue("{:.2f}".format(cost_tenant) + " SEK"), "\n")
 
 
 def main():
