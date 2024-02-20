@@ -207,8 +207,8 @@ def update_costs_sheet():
     print(ColoredText.yellow("Updating costs worksheet...\n"))
 
     # Append new row to cost sheet
-    new_row_costs = [monthly_fee, electricity_fee, subscription_fee,\
-    transfer_fee]
+    new_row_costs = ([monthly_fee, electricity_fee, subscription_fee,
+                     transfer_fee])
     costs_sheet.append_row(new_row_costs)
 
     print("Costs sheet updated with the following data:")
@@ -263,8 +263,8 @@ def calculate_tenants_consumption():
 
     # Update the cell in the same row
     consumption_sheet.update_cell(len(consumption), 3, consumption_tenant)
-    print("Consumption is:", ColoredText.blue(str(consumption_tenant)\
-    + " kWh"), "\n")
+    print(("Consumption is:", ColoredText.blue(str(consumption_tenant)
+          + " kWh"), "\n"))
 
 
 def calculate_total_cost():
@@ -289,12 +289,13 @@ def calculate_total_cost():
     subscription_fee = float(costs_row[subscription_fee_index])
     transfer_fee = float(costs_row[transfer_fee_index])
 
-    cost_tenant = (consumption_tenant * electricity_fee) + \
-    (consumption_tenant * transfer_fee) + monthly_fee + subscription_fee
+    cost_tenant = ((consumption_tenant * electricity_fee)
+                   + (consumption_tenant * transfer_fee)
+                   + monthly_fee + subscription_fee)
 
     costs_sheet.update_cell(len(costs), 5, cost_tenant)
-    print("Total cost for the tenant for " + current_month + " is",\
-    ColoredText.blue("{:.2f}".format(cost_tenant) + " SEK"), "\n")
+    print(("Total cost for the tenant for " + current_month + " is",
+          ColoredText.blue("{:.2f}".format(cost_tenant) + " SEK"), "\n"))
 
 
 def main():
@@ -306,8 +307,8 @@ def main():
 
 
 current_month = datetime.today().strftime('%B')  # get current month
-ascii_art = pyfiglet.figlet_format("Electricity Calculation for "\
-+ current_month, font="digital")
+ascii_art = pyfiglet.figlet_format("Electricity Calculation for "
+                                   + current_month, font="digital")
 colored_ascii_art = ColoredText.cyan(ascii_art)  # Color to cyan
 print(colored_ascii_art)
 print("Following data collection will inform what the tenant shall \
