@@ -74,7 +74,7 @@ def get_monthly_fee():
             os.system('clear')  # Clear the terminal
             return int(data_str)
         else:
-            print(ColoredText.red("Invalid input, please enter a 2 digit " \
+            print(ColoredText.red("Invalid input, please enter a 2 digit "
                   "number.\n"))
 
 
@@ -94,19 +94,19 @@ def get_electricity_fee():
         try:
             data = float(data_str)
             if data.is_integer():
-                print(ColoredText.red("Invalid input, please enter a number " \
-                "with one decimal place\n"))
+                print(ColoredText.red("Invalid input, please enter a number "
+                      "with one decimal place\n"))
             elif round(data, 1) == data:  # check if number has one decimal
                 print(ColoredText.green("Data is valid.\n"))
                 time.sleep(2)  # Wait for 2 seconds
                 os.system('clear')  # Clear the terminal
                 return data
             else:
-                print(ColoredText.red("Invalid input, please enter a number " \
-                "with one decimal place\n"))
+                print(ColoredText.red("Invalid input, please enter a number "
+                      "with one decimal place\n"))
         except ValueError:
-            print(ColoredText.red("Invalid input, please enter a number " \
-            "with one decimal place\n"))
+            print(ColoredText.red("Invalid input, please enter a number "
+                  "with one decimal place\n"))
 
 
 def get_subscription_fee():
@@ -128,8 +128,8 @@ def get_subscription_fee():
             os.system('clear')  # Clear the terminal
             return int(data_str)
         else:
-            print(ColoredText.red("Invalid input, please enter a " \
-            "3 digit number.\n"))
+            print(ColoredText.red("Invalid input, please enter a "
+                  "3 digit number.\n"))
 
 
 def get_transfer_fee():
@@ -148,19 +148,19 @@ def get_transfer_fee():
         try:
             data = float(data_str)
             if data.is_integer():
-                print(ColoredText.red("Invalid input, please enter a number " \
-                "with one decimal place\n"))
+                print(ColoredText.red("Invalid input, please enter a number "
+                      "with one decimal place\n"))
             elif round(data, 1) == data:  # check if number has one decimal
                 print(ColoredText.green("Data is valid.\n"))
                 time.sleep(2)  # Wait for 2 seconds
                 os.system('clear')  # Clear the terminal
                 return data
             else:
-                print(ColoredText.red("Invalid input, please enter a number " \
-                "with one decimal place\n"))
+                print(ColoredText.red("Invalid input, please enter a number "
+                      "with one decimal place\n"))
         except ValueError:
-            print(ColoredText.red("Invalid input, please enter a number " \
-            "with one decimal place\n"))
+            print(ColoredText.red("Invalid input, please enter a number "
+                  "with one decimal place\n"))
 
 
 def get_total_consumption():
@@ -173,16 +173,16 @@ def get_total_consumption():
 
     # Check so exactly 3 digit number between 500 to 999 is entered.
     while True:
-        data_str = input("Enter your data here, a number " \
-        "between 500 to 999:\n")
+        data_str = input("Enter your data here, a number "
+                         "between 500 to 999:\n")
         if data_str.isdigit() and 500 <= int(data_str) <= 999:
             print(ColoredText.green("Data is valid.\n"))
             time.sleep(2)  # Wait for 2 seconds
             os.system('clear')  # Clear the terminal
             return int(data_str)
         else:
-            print(ColoredText.red("Invalid input, please enter a number " \
-            "between 500 to 999.\n"))
+            print(ColoredText.red("Invalid input, please enter a number "
+                  "between 500 to 999.\n"))
 
 
 def get_landlord_consumption():
@@ -202,8 +202,8 @@ def get_landlord_consumption():
             os.system('clear')  # Clear the terminal
             return int(data_str)
         else:
-            print(ColoredText.red("Invalid input, please enter a number " \
-            "between 70 to 120.\n"))
+            print(ColoredText.red("Invalid input, please enter a number "
+                  "between 70 to 120.\n"))
 
 
 def update_costs_sheet():
@@ -327,6 +327,6 @@ ascii_art = pyfiglet.figlet_format("Electricity Calculation for "
                                    + current_month, font="digital")
 colored_ascii_art = ColoredText.cyan(ascii_art)  # Color to cyan
 print(colored_ascii_art)
-print("Following data collection will inform what the tenant shall " \
-"pay for the monthly usage.\n")
+print("Following data collection will inform what the tenant shall "
+      "pay for the monthly usage.\n")
 main()
