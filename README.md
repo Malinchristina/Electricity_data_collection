@@ -152,6 +152,7 @@ Configurations
 - [Snyk Advisor](https://snyk.io/advisor/python/colorama/functions/colorama.Style.RESET_ALL) - How to use colorama
 - [FreeCodeCamp](https://www.freecodecamp.org/news/the-python-sleep-function-how-to-make-python-wait-a-few-seconds-before-continuing-with-example-commands/#:~:text=You%20can%20use%20Python%27s%20sleep,time%20delay%20to%20your%20code) - How to use sleep function to show print message before clear function
 - [Ask Python](https://www.askpython.com/python/string/decimal-formatting-0f-vs-1f) - How to show 2 decimals
-- [Stack Overflow](https://stackoverflow.com/questions/6557553/get-month-name-from-number) - Ho to show the current month as string
+- [Stack Overflow](https://stackoverflow.com/questions/6557553/get-month-name-from-number) - How to show the current month as string
+- [Real Python](https://realpython.com/python-pep8/#maximum-line-length-and-line-breaking) - How to use line breaking
 - Thanks to fellow student Ben Gilbert for additional testing of the app
 - Thanks to my mentor Gareth McGirr
