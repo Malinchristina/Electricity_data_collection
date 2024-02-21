@@ -197,13 +197,38 @@ The repository was created on GitHub.
 
 The app was deployed on Heroku.
 
-Even after running pip3 install -r requirements.txt some requirements were not added so an error message was shown when launching Heroku. The requirements for pyfiglet and colorama were added manually.
+- In the dashboard, click on Create New App
 
-Configurations
+![Create](docs/screenshots/heroku_1.png)
+
+- Name the app
+
+![Name](docs/screenshots/heroku_2.png)
+
+-  In Settings add config vars
+	- CREDS and the info from the creds folder
+	- PORT 8000
+
+	![config](docs/screenshots/heroku_3.png)
+
+- Add buildpacks
+	- python
+	- nodejs
+
+	![buildpacks](docs/screenshots/heroku_4.png)
+
+- In Deploy 
+	- connect to github 
+	- search for the repo
+	- connect
+	- Deploy Branch
+	- View
+
+	![deploy](docs/screenshots/heroku_5.png)
 
 ## Additional comments
 
-I had issues with the Visaul Studio Code desktop app. This was most likely due to the laptop's operating system being too old for all the requirements such as homebrew. This led me to have problems re-linking to github and when trying to set it up again I forgot to change my name when I copied the command line. So on commits from February 9th and 11th, commit looks to have been done by John Doe. I then used Visual Studio Code in the browser instead.
+I had issues with the Visual Studio Code desktop app. This was most likely due to the laptop's operating system being too old for all the requirements such as homebrew. This led me to have problems re-linking to github and when trying to set it up again I forgot to change my name when I copied the command line. So on commits from February 9th and 11th, commit looks to have been done by John Doe. I then used Visual Studio Code in the browser instead.
 
 ![commit](docs/screenshots/incorrect_commit.png)
 
