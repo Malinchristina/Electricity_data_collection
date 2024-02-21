@@ -143,10 +143,10 @@ In the creds file, I copied the email address and shared my Google Sheets with t
 
 	![transfer fee](docs/screenshots/transfer_fee_user_feedback.png)
 
-	 - Update costs sheet
-	 - Total monthly usage
+- Update costs sheet
+- Total monthly usage
 
-	 ![cost sheet](docs/screenshots/updating_cost_total_usage.png)
+![cost sheet](docs/screenshots/updating_cost_total_usage.png)
 
 - Landlords monthly usage from meter
 
