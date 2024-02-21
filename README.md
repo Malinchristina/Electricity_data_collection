@@ -127,6 +127,9 @@ In the creds file, I copied the email address and shared my Google Sheets with t
 
  - Below fees are retrieved from the invoice from the electricity supplier
 	 - Monthly fee
+
+	![Start](docs/screenshots/start.png)
+
 	 - Electricity fee
 
 	![elctricity fee](docs/screenshots/electricity_fee.png)
