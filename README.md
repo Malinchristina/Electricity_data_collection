@@ -1,6 +1,7 @@
 # Electricity data collection
 
 
+
 ## Table Of Contents
 
 * [Introduction](#Introduction)
@@ -28,9 +29,9 @@
 
 This data collection aims for landlords in Sweden to calculate what the tenant shall pay for the monthly electricity usage. The data collection is a mix of information from the electricity supplier and the landlord's electricity meter. The data is stored in a Google sheet and also provided directly in the terminal.
 
-The live link to the app can be found here
+The live link to the app can be found here [Electricity data collection](https://electricity-data-collection-4303cf0cac5f.herokuapp.com/).
 
-And the google worksheet can be accessed through this link [Google sheet](https://docs.google.com/spreadsheets/d/1BEu4ZwBUQHSGmYAlvDbfmk11Y7h63C6sm_ugVHCv1jc/edit?usp=sharing)
+And the google worksheet can be accessed through this link [Google sheet](https://docs.google.com/spreadsheets/d/1BEu4ZwBUQHSGmYAlvDbfmk11Y7h63C6sm_ugVHCv1jc/edit?usp=sharing).
 
 ## User demographic
 
