@@ -1,6 +1,6 @@
 # Electricity data collection
 
-[app gif](docs/screenshots/app_rec.gif)
+![app gif](docs/screenshots/app_rec.gif)
 
 ## Table Of Contents
 
