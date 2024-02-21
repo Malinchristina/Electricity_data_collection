@@ -46,7 +46,7 @@ Landlords with one electricity meter and a tenant who wants to charge them for t
 
 ### Planning
 
-I used [Lucid app](www.lucidchart.com) to plan the data collection.
+I used Lucidchart to plan the data collection.
 
 #### Start
 
@@ -97,7 +97,7 @@ Google Sheets was used to store the data collection and was set up as below.
 
 - Select as in the image below
 
-![Cred type](docs/screenshots/api_7.png)
+![Cred type](docs/screenshots/api_8.png)
 
 - Then choose service role
 
