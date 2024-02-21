@@ -90,7 +90,7 @@ Google Sheets was used to store the data collection and was set up as below.
 
 - Search for Google Drive API, select it and press enable
 
-![Googel drive](docs/screenshots/api_6.png)
+![Google drive](docs/screenshots/api_6.png)
 
 - Then press create credentials
 
@@ -205,17 +205,15 @@ The app was deployed on Heroku.
 
 ![Name](docs/screenshots/heroku_2.png)
 
--  In Settings add config vars
-	- CREDS and the info from the creds folder
-	- PORT 8000
+-  In Settings
+	- Add config vars
+		- CREDS and the info from the creds folder
+		- PORT 8000
+	- Add buildpacks
+		- python
+		- nodejs
 
-	![config](docs/screenshots/heroku_3.png)
-
-- Add buildpacks
-	- python
-	- nodejs
-
-	![buildpacks](docs/screenshots/heroku_4.png)
+		![config](docs/screenshots/heroku_3.png)
 
 - In Deploy 
 	- connect to github 
@@ -224,7 +222,9 @@ The app was deployed on Heroku.
 	- Deploy Branch
 	- View
 
-	![deploy](docs/screenshots/heroku_5.png)
+	![deploy1](docs/screenshots/heroku_4.png)
+
+	![deploy2](docs/screenshots/heroku_5.png)
 
 ## Additional comments
 
