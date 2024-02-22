@@ -308,7 +308,7 @@ def calculate_total_cost():
                    + (consumption_tenant * transfer_fee)
                    + monthly_fee + subscription_fee)
 
-    costs_sheet.update_cell(len(costs), 5, cost_tenant)
+    costs_sheet.update_cell(len(costs), 5, cost_tenant)  # Update google sheet
     print("Total cost for the tenant for " + current_month + " is "
           + ColoredText.blue("{:.2f}".format(cost_tenant) + " SEK"), "\n")
     print(ColoredText.yellow("End of data collection."))
